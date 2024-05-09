@@ -1,0 +1,15 @@
+# Firewalld resource documentation:
+# https://pkg.go.dev/github.com/purpleidea/mgmt/engine/resources?utm_source=godoc#FirewalldRes
+
+# Pangolin services opened on public zone before mgmt came in: dhcpv6-client mdns ssh
+
+firewalld "misc" { # name is irrelevant
+    zone => "public",
+
+    services => [
+        "tftp",
+    ],
+    ports => ["4280/tcp",],
+
+    state => $const.res.firewalld.state.absent,
+}

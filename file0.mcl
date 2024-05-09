@@ -1,0 +1,7 @@
+file "/home/honiix/Downloads/mgmt-hello.txt" {
+    content => "test",
+    owner => "honiix",
+    group => "honiix",
+    mode => "0644",
+    state => $const.res.file.state.exists,
+}
